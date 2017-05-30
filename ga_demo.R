@@ -14,14 +14,14 @@ library(forecast)
 ga_auth()
 
 # Set the GA viewID
-my_id <- 110870352 
+view_id <- 110870352 
 
 # Set timeframe
 StartDate <- today()-8
 EndDate <- today()-1
 
 # Now, query for some basic data, assigning the data to a 'data frame' object called 'web_data'
-web_data <- google_analytics_4(my_id, 
+web_data <- google_analytics_4(view_id, 
                                date_range = c(StartDate, EndDate),
                                metrics = c("sessions","pageviews",
                                            "entrances","bounces"),
