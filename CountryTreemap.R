@@ -14,9 +14,8 @@ view_id <- 110870352
 ga_data <- google_analytics_4(view_id,
                                  date_range = c(Sys.Date() - 365, Sys.Date()),
                                  dimensions = c("country","deviceCategory"),
-                                 segments = segment_mobile
                                  metrics = c("sessions", "transactions","transactionRevenue"),
-                                 max = -1)
+                                 anti_sample_batches = "auto")
 
 treemap(ga_data,
         index=c("deviceCategory", "sessions", "transactions", "transactionRevenue"),
