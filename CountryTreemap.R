@@ -1,3 +1,9 @@
+# Install (if needed) the Libraries if not installed already
+if(!require(treemap)) install.packages("treemap")
+if(!require(googleAnalyticsR)) install.packages("googleAnalyticsR")
+if(!require(portfolio)) install.packages("portfolio")
+if(!require(RColorBrewer)) install.packages("RColorBrewer")
+
 # Load the libraries
 library(googleAnalyticsR)
 library(treemap)
