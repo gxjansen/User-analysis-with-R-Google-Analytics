@@ -48,18 +48,14 @@ cor.test(((ga_data2$pageLoadTime / 1000) / 60), ga_data2$bounceRate)
 # Create dataframe and plot results
 speedy2 <-
   data.frame(((ga_data2$pageLoadTime / 1000) / 60), ga_data2$bounceRate)
-colnames(speedy2) <- c("PageLoadTime", "BounceRate")
-#p <- ggplot(speedy2, aes(PageLoadTime, BounceRate)) + geom_point()
-#p + geom_smooth(method = "lm", se = FALSE)
-
 # Nicer graph
 
 theme_set(theme_bw())  # pre-set the bw theme.
 data("speedy2", package = "ggplot2")
 
 # Scatterplot
-gg1 <- ggplot(speedy2, aes(x=PageLoadTime, y=BounceRate)) + 
-  geom_point(aes(col=BounceRate)) + 
+gg1 <- ggplot(ga_data2, aes(x=pageLoadTime, y=bounceRate)) + 
+  geom_point(aes(col=bounceRate)) + 
   geom_smooth(method="loess", se=F) + 
   xlim(c(0, 25)) + 
   ylim(c(0, 100)) + 
